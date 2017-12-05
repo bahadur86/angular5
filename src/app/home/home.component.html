@@ -1,0 +1,22 @@
+<div class="container color-dark">
+	<div class="col">
+		<p> Add a bucket list Item </p>	
+	</div>
+	<div class="col">
+		<p> Your bucket list ({{ item }}) </p>	
+	</div>
+</div>
+
+<div class="container color-light" [@go]="go.length">
+	<div class="sm">
+		<p> Add a bucket list Form </p>	
+		<form>
+			<input type="text" name="item" class="text" placeholder="add item" [(ngModel)] = "goal">
+			<b><span>{{ goal }}</span></b>
+			<input type="submit" class="btn" name="item" [value]="btn" (click)="addCount()">
+		</form>
+	</div>
+	<div class="sm">
+		<p *ngFor=" let g of go; let i = index" (click) = "remove(i)"> {{ g }} </p>	
+	</div>
+</div>
